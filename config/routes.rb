@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
  
-  get '/cities', to: 'cities#index'
+  root 'cities#index'
   resources :cities do
     collection do
       post :confirm
