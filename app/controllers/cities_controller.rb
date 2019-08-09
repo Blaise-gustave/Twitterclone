@@ -8,7 +8,7 @@ class CitiesController < ApplicationController
 
   def destroy
     @city.destroy
-    redirect_to cities_path, notice: "You have deleted the post!"
+    redirect_to cities_path, notice: "You have deleted the content!"
   end
 
   def confirm
@@ -27,7 +27,7 @@ class CitiesController < ApplicationController
   def create
     @city = City.create(blog_params)
     if @city.save
-      redirect_to cities_path, notice: "You have created new post!"
+      redirect_to cities_path, notice: "You have created new content!"
     else
       render :new
     end
@@ -38,7 +38,7 @@ class CitiesController < ApplicationController
   end
   def update
     if @city.update(blog_params)
-      redirect_to cities_path, notice: "You have edited this post！"
+      redirect_to cities_path, notice: "You have edited this content！"
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class CitiesController < ApplicationController
 
   private
   def blog_params
-    params.require(:city).permit(:name, :content)
+    params.require(:city).permit( :content)
   end
   def set_blog
     @city = City.find(params[:id])

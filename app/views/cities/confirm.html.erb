@@ -7,7 +7,6 @@
 <%= form_with(model: @city, local: true, url: cities_path) do |form| %>
   <%= form.hidden_field :name %>
   <%= form.hidden_field :content %>
-  <p>Title:<%= @city.name %></p>
   <p>content:<%= @city.content %></p>
   <%= form.submit  "submit" %>
 <% end %>
